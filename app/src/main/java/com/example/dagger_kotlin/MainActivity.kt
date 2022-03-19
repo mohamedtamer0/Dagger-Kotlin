@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
 
         val component: CoffeeComponent = DaggerCoffeeComponent.create()
         component.inject(this)
+
         Log.d(LOG_TAG, "Tamer onCreate: " + coffee.getCoffeeCup())
 
     }

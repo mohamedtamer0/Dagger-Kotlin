@@ -1,13 +1,20 @@
 package com.example.dagger_kotlin
 
+import android.util.Log
 import javax.inject.Inject
 
 class Farm {
     @Inject
-    constructor()
+    constructor(){
+        Log.d(LOG_TAG, "Tamer Farm: ")
+    }
 
 
     fun getBeans(): String {
         return "Beans"
+    }
+
+    companion object {
+        private const val LOG_TAG = "Farm"
     }
 }
