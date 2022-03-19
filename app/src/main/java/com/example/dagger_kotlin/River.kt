@@ -2,7 +2,12 @@ package com.example.dagger_kotlin
 
 import javax.inject.Inject
 
-class Wheels{
+class River {
     @Inject
     constructor()
+
+
+    fun getWater(): String {
+        return "water"
+    }
 }
