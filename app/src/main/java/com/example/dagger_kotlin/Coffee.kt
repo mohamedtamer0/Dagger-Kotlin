@@ -7,12 +7,14 @@ class Coffee {
     @Inject
     lateinit var farm: Farm
 
+    var sugar: Int = 0
 
     lateinit var river: River
 
     @Inject
     constructor(river: River, sugar: Int) {
         this.river = river
+        this.sugar = sugar
     }
 
 
@@ -23,7 +25,7 @@ class Coffee {
 
 
     fun getCoffeeCup(): String {
-        return farm.getBeans() + "+" + river.getWater()
+        return farm.getBeans() + "+" + river.getWater() + "sugar: " + sugar
     }
 
 

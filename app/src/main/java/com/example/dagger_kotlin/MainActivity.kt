@@ -13,7 +13,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val component: CoffeeComponent = DaggerCoffeeComponent.create()
+        val component: CoffeeComponent =
+            DaggerCoffeeComponent.builder().coffeeModule(CoffeeModule(3)).build()
         component.inject(this)
 
         Log.d(LOG_TAG, "Tamer onCreate: " + coffee.getCoffeeCup())
