@@ -11,7 +11,7 @@ class Coffee {
     lateinit var river: River
 
     @Inject
-    constructor(river: River) {
+    constructor(river: River, sugar: Int) {
         this.river = river
     }
 
