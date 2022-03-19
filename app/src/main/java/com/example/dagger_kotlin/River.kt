@@ -4,7 +4,8 @@ import android.util.Log
 import javax.inject.Inject
 
 class River {
-    @Inject
+
+    //for View
     constructor() {
         Log.d(LOG_TAG, "Tamer River: ")
     }
