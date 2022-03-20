@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         val component: AppComponent = (application as MainApplication).getAppComponent()
 
         val coffeeComponent: CoffeeComponent =
-            DaggerCoffeeComponent.builder().milk(4).sugar(4).appComponent(component).build()
+            component.getCoffeeComponentBuilder().milk(4).sugar(4).build()
         coffeeComponent.inject(this)
 
         Log.d(LOG_TAG, "Tamer coffee1: " + coffee + "river for Coffee no1 " + coffee.river)

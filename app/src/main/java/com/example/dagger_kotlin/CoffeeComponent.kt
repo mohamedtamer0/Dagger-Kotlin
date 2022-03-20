@@ -2,16 +2,17 @@ package com.example.dagger_kotlin
 
 import dagger.BindsInstance
 import dagger.Component
+import dagger.Subcomponent
 import javax.inject.Singleton
 
 @ActivityScope
-@Component(dependencies = [AppComponent::class])
+@Subcomponent
 interface CoffeeComponent {
     fun getCoffee(): Coffee
 
     fun inject(mainActivity: MainActivity)
 
-    @Component.Builder
+    @Subcomponent.Builder
     interface Builder {
 
         @BindsInstance
@@ -20,7 +21,6 @@ interface CoffeeComponent {
         @BindsInstance
         fun milk(@Milk("milk") milk: Int): Builder
 
-        fun appComponent(appComponent: AppComponent):Builder
 
         fun build(): CoffeeComponent
     }
