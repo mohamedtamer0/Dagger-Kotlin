@@ -5,7 +5,7 @@ import dagger.Provides
 import javax.inject.Singleton
 
 @Module
-class CoffeeModule {
+class RiverModule {
 
 
     @Singleton

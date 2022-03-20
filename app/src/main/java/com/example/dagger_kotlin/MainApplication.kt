@@ -4,17 +4,15 @@ import android.app.Application
 
 class MainApplication : Application() {
 
-    private lateinit var coffeeComponent: CoffeeComponent
+    private lateinit var appComponent: AppComponent
 
     override fun onCreate() {
         super.onCreate()
-
-        coffeeComponent =
-            DaggerCoffeeComponent.builder().sugar(4).milk(5).build()
+        appComponent = DaggerAppComponent.create()
     }
 
-    fun getCoffeeComponent(): CoffeeComponent {
-        return coffeeComponent
+    fun getAppComponent(): AppComponent {
+        return appComponent
     }
 
 }
