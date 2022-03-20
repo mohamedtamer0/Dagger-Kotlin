@@ -2,24 +2,17 @@ package com.example.dagger_kotlin
 
 import dagger.Module
 import dagger.Provides
+import javax.inject.Singleton
 
 @Module
 class CoffeeModule {
 
-    var sugar: Int = 0
 
-    constructor(sugar: Int) {
-        this.sugar = sugar
-    }
-
-
+    @Singleton
     @Provides
     fun provideRiver(): River {
         return River()
     }
 
-    @Provides
-    fun provideSugar(): Int {
-        return sugar;
-    }
+
 }

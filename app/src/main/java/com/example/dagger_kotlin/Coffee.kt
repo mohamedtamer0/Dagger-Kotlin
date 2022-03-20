@@ -2,19 +2,22 @@ package com.example.dagger_kotlin
 
 import android.util.Log
 import javax.inject.Inject
+import javax.inject.Named
 
 class Coffee {
     @Inject
     lateinit var farm: Farm
 
     var sugar: Int = 0
+    var milk: Int = 0
 
     lateinit var river: River
 
     @Inject
-    constructor(river: River, sugar: Int) {
+    constructor(river: River, @Sugar("sugar") sugar: Int, @Milk("milk") milk: Int) {
         this.river = river
         this.sugar = sugar
+        this.milk = milk
     }
 
 
@@ -25,7 +28,7 @@ class Coffee {
 
 
     fun getCoffeeCup(): String {
-        return farm.getBeans() + "+" + river.getWater() + "sugar: " + sugar
+        return farm.getBeans() + "+" + river.getWater() + "sugar: " + sugar + " milk: " + milk
     }
 
 

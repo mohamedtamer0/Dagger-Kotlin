@@ -9,15 +9,17 @@ class MainActivity : AppCompatActivity() {
 
     @Inject
     lateinit var coffee: Coffee
+    @Inject
+    lateinit var coffee2:Coffee
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val component: CoffeeComponent =
-            DaggerCoffeeComponent.builder().coffeeModule(CoffeeModule(3)).build()
+        val component: CoffeeComponent = (application as MainApplication).getCoffeeComponent()
         component.inject(this)
 
-        Log.d(LOG_TAG, "Tamer onCreate: " + coffee.getCoffeeCup())
+        Log.d(LOG_TAG, "Tamer onCreate: " + coffee.getCoffeeCup() + "Coffee no " + coffee.farm)
+        Log.i(LOG_TAG, "Tamer onCreate: " + coffee.getCoffeeCup() + "Coffee no " + coffee2.farm)
 
     }
 
